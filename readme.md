@@ -61,3 +61,49 @@ Go advantages :
 - compiled language. ( compiles into single binary ( machine code ) )
 - Faster than interpreted languages , like Python
 - Consistent across different OS.
+
+## Local Setup - Install GO & Editor
+
+1 - Install Go : go distribution actually comes with a Go CLI tool.
+
+- https://go.dev/doc/install
+  - type go in the terminal and check if there is an output to make sure that you installed go compiler correclty.
+
+2 - Install an IDE - Editor for writing code ( VS Code ).
+
+3 - Install Go extension.
+
+## First Program with Go
+
+if you try to put an instruction for example Print('Hello World'); , an error appears that complains about go.mod
+
+the first thing we need to fix is to make our go application into a project and for that we need to basically initialize it , that's the error that we get here and to do that 
+
+using the terminal 
+
+`$>go mod init  booking-app`
+
+- Initialized a go.mod file.
+- ```go
+  module booking-app
+
+  go 1.23.0
+
+  ```
+- Describes the module : with name/module path and go version used in the program.
+- The module path is also the import path ( e.g import "github.com/jihed/booking-app")
+
+the issue is fixed still to fix the package issue:
+
+* in Go everything is organized into packages
+* also go need to know where to start the program ? where is the entrypoint?
+  * main function that go will look for whenever you execute your go application.
+  * Print() is a function that comes from a go package a built-in package called fmt or format we have to explicitly import any packages from which we're using the function:
+    fmt is a part of  [standard library](https://pkg.go.dev/std)
+  * * ```go
+      import "fmt";
+      fmt.Print("hello FT")
+      ```
+
+execute go application:
+`$>go run main.go`
