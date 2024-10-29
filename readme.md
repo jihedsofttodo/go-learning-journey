@@ -107,3 +107,23 @@ the issue is fixed still to fix the package issue:
 
 execute go application:
 `$>go run main.go`
+
+## Variables & Constants
+
+to define a variable use the var keyword.
+
+`var conferenceName = "Go Conference"`
+
+in go unlinke many other language when we define a variable with a certain value and we don't use it in the code we get an error " ... declared but not used ". also you get the same error with package that package gets imported but not used which is a very good reminder to clean up your code.
+
+to define the constants that are like variables, except that their values cannot be changed.
+
+`const conferenceTcikets = 50`
+
+## Formatting Output
+
+whenever we're printing our text mixed with variables we can use a function called printf from the fmt package.
+
+`fmt.Printf("Welcome to %v booking application \n", conferenceName)`
+
+`%v` is the default format but you have other specific format also available if you want the values to be displayed differently and you can see this whole list in the go doc https://pkg.go.dev/fmt@go1.23.2
