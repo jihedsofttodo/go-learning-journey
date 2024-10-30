@@ -178,3 +178,44 @@ fmt.Print(&remainingTickets)   // this will displays  the address memory of the 
 * Print Messages.
 * Collect User Input.
 * Write into a File.
+
+## Arrays & Slices
+
+arrays and slices are commonly used data types in go applications.
+
+* array in go has fixed size and the type:
+  `var bookins = [50]string  ( we can't have an array with mixed values )`
+* to add or access an elements in array use the index:
+  bookings[0] = "New Value"
+
+-> we have an issue array what if we don't know the size when creating it? this is when slice comes on
+
+**slice** is a list that is more **dynamic in size, where we don't need to specify a size at the beginning. and it is automatically expands when new elements are added.**
+
+Slices in Go is an abstraction of an Array ( use the array under the hood).
+
+Slices are more flexible and powerful: variable-length or get an sub-array of its own.
+
+Slices are also index-based and have a size, but is resized when needed.
+
+to create a slice:
+var bookings []string
+
+in order to add an element into slice we don't use the index instead we need to use append(slice, value), this will adds the element(s) at the end of the slice
+
+## Loops
+
+loops are simplified in Go, you only have the "for loop"
+
+**for-each loop**
+
+```
+for i, element := range bookings{    }
+```
+
+range iterates over elements for different data structures.( not only arrays and slices ).
+
+* _ ( blank identifier ) to ignore a variable you don't want to use.
+
+**for loop condition:**
+for condition {} : by default the condition is always true.
