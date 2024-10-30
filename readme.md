@@ -128,7 +128,53 @@ whenever we're printing our text mixed with variables we can use a function call
 
 `%v` is the default format but you have other specific format also available if you want the values to be displayed differently and you can see this whole list in the go doc https://pkg.go.dev/fmt@go1.23.2
 
+## Data Types in GO
+
 ```go
 var userName
 nameuserName = "Jamil"
 ```
+
+in go all values have data types.
+
+* When we create a variable or constant and assign a value to it immediately on the same line go can imply the data type based on the value so go knows that this is a variable type for String and this is a constant and variable types for integers.
+* When we do not assign a value immediately go doesn't know what type of value you are going to store so it asks you to explicitly define a type to make your code
+  * More Robust, reduces the likelihood of errors.
+  * Helps developers to catch type mismatches sooner ( at compile time ).
+* In GO we have uint8 ( u for unsigned ) , uint16..64 and int8...64 ( 8..64 correspond the length of integer and u for positive numbers ) and we have float and comlex for real numbers.
+* One more thing in terms of variable definition in go ,  we have an alternative syntax for creating a variable and assigning it a value directly "Syntactic Suger"
+  * instead of `conferenceName string = "Go programming "`
+  * `we can get rid of var keyword as well as the type and before the equal sign just add a column: `**`conferenceName := "Go Programming"`**
+  * note that this alternative syntax you cannot declare constants, it only applies to variables.
+
+## Getting User Input
+
+in order to read user input we use another function from the same format package called Scan.
+
+fmt.Scan(userName) : save user's value in "userName" variable
+
+after run that instruction we were not able to enter anything and the value of user is empty.
+
+-> before the user input variable we need to add what's called pointer.
+
+* A Pointer is **a variable** that points to the memory address of another that references the actual value.( in Go is called special variable )
+
+e.g:
+
+```go
+fmt.Print(remainingTickets) // this will displays the value of the variable .
+fmt.Print(&remainingTickets)   // this will displays  the address memory of the variable
+```
+
+
+"fmt" package gives us different functions : Formatted Input and Output ( I / O ):
+
+* Print Messages.
+* Collect User Input.
+* Write into a File.
+
+"fmt" package gives us different functions : Formatted Input and Output ( I / O ):
+
+* Print Messages.
+* Collect User Input.
+* Write into a File.
