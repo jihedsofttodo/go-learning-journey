@@ -50,7 +50,7 @@ Go attempt to combine both:
 * Simple and readable syntax of a dynamically typed language like Python.
 * Efficiency and safety of a lower-level, statically typed language like C++.
 
-Go is used on the server side or backend side of the applications and these types of applications can range from microservices and web applications to database services and so on. in fact many cloud technologies or technologies that run on modern cloud environments are actually written in go like docker hashicorp vault, kubernetes , cockroach db 
+Go is used on the server side or backend side of the applications and these types of applications can range from microservices and web applications to database services and so on. in fact many cloud technologies or technologies that run on modern cloud environments are actually written in go like docker hashicorp vault, kubernetes , cockroach db
 
 Go advantages :
 
@@ -77,9 +77,9 @@ Go advantages :
 
 if you try to put an instruction for example Print('Hello World'); , an error appears that complains about go.mod
 
-the first thing we need to fix is to make our go application into a project and for that we need to basically initialize it , that's the error that we get here and to do that 
+the first thing we need to fix is to make our go application into a project and for that we need to basically initialize it , that's the error that we get here and to do that
 
-using the terminal 
+using the terminal
 
 `$>go mod init  booking-app`
 
@@ -127,3 +127,8 @@ whenever we're printing our text mixed with variables we can use a function call
 `fmt.Printf("Welcome to %v booking application \n", conferenceName)`
 
 `%v` is the default format but you have other specific format also available if you want the values to be displayed differently and you can see this whole list in the go doc https://pkg.go.dev/fmt@go1.23.2
+
+```go
+var userName
+nameuserName = "Jamil"
+```
