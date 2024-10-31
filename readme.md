@@ -248,3 +248,21 @@ var remainingTickets uint = 50
 var bookings = []string{}
 func main(){...}
 ```
+
+## Packages in Go:
+
+Go programs are organized into packages
+
+A package is a collection of Go files
+
+* if our code got larger we can split it into multiple files.
+* Exporting a variable:
+  * Make it available for all packages in the app => Capitalize first letter
+
+## Scope Rule ( Variable Scopes ) in Go
+
+we have 3 levels of scope:
+
+1. Local: declaration with Function.
+2. Package: declaration outside all functions.
+3. Global: declaration outside all functions & uppercase first letter.

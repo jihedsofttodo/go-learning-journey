@@ -1,6 +1,7 @@
 package main
 
 import (
+	"booking-app/utility"
 	"fmt"
 	"strings"
 )
@@ -17,10 +18,10 @@ func main() {
 	for {
 		firstName, lastName, email, userTickets := getUserInput()
 		// user inputs validation
-		isValidName, isValidEmail, isValidTicketNumber := valideUserInput(firstName, lastName, email, userTickets)
+		isValidName, isValidEmail, isValidTicketNumber := utility.ValidateUserInput(firstName, lastName, email, userTickets, remainingTickets)
 		//isValidCity := city == "Singapore" || city == "London"
 		if isValidName && isValidEmail && isValidTicketNumber {
-			bookTicket(userTickets,firstName, lastName, email)
+			bookTicket(userTickets, firstName, lastName, email)
 			fmt.Printf("The first names of bookings: %v\n", printFirstNamesWithReturn())
 			if remainingTickets == 0 {
 				fmt.Println("Our conference is booked out, come back next year .")
@@ -67,13 +68,6 @@ func printFirstNamesWithReturn() []string {
 		firstNames = append(firstNames, names[0])
 	}
 	return firstNames
-}
-
-func valideUserInput(firstName string, lastName string, email string, userTickets uint) (bool, bool, bool) {
-	isValidName := len(firstName) >= 2 && len(lastName) >= 2
-	isValidEmail := strings.Contains(email, "@")
-	isValidTicketNumber := userTickets > 0 && userTickets <= remainingTickets
-	return isValidName, isValidEmail, isValidTicketNumber
 }
 
 func getUserInput() (string, string, string, uint) {
