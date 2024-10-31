@@ -291,3 +291,27 @@ userData["numberOfTickets"] = strconv.FormatUint(uint64(userTickets), 10) // 10 
 Struct ( Structure ) let us define key value pairs for an entity like user but with mixed data types.
 
 in order to create struct use the type keyword creates a new type, with the name you specify
+
+```go
+type UserData struct {firstNamestringlastNamestringemailstringnumberOfTicketsuint}
+```
+
+## Go Routines - Concurrency
+
+in order to use the concurrency in Go lang we need to prefix with go keyword that it will starts a new goroutine. go routine is a lightweight thread managed by the Go runtime.
+
+`go sendTicket(userTickets, firstName, lastName, email)`
+
+we can use Waitgroup for waits for the launched goroutine to finish that is comes from a sync package 
+
+`var wg = sync.WaitGroup{}`
+
+`wg.Add(1)`
+
+Add: Sets the number of goroutines to wait for ( increases the counter by the provided number )
+
+at the end we add
+
+`wg.Wait(): `blocks until the WaitGroup counter is 0
+
+and in the function that use go rountins : `wg.Done():` decrements the WaitGroup counter by 1
