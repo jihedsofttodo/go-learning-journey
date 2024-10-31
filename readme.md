@@ -266,3 +266,28 @@ we have 3 levels of scope:
 1. Local: declaration with Function.
 2. Package: declaration outside all functions.
 3. Global: declaration outside all functions & uppercase first letter.
+
+## Maps
+
+map is a data type that will allow storing multiple key value pairs.
+
+* Maps unique keys to values.
+* You can retrieve the value by using its key later.
+
+`var userData = make(map[string]string)`
+
+
+```go
+var userData = make(map[string]string)
+userData["firstName"] = firstName
+userData["lastName"] = lastName
+userData["email"] = email
+userData["numberOfTickets"] = strconv.FormatUint(uint64(userTickets), 10) // 10 decimal number
+```
+
+
+## Struct Data Type
+
+Struct ( Structure ) let us define key value pairs for an entity like user but with mixed data types.
+
+in order to create struct use the type keyword creates a new type, with the name you specify
