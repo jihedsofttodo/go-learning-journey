@@ -219,3 +219,32 @@ range iterates over elements for different data structures.( not only arrays and
 
 **for loop condition:**
 for condition {} : by default the condition is always true.
+
+## Functions:
+
+```go
+func func_name(){}
+func func_name(arg type ...) {}
+func func_name(arg type) type {}
+```
+
+* Go function can return multiple values:
+
+```go
+func valideUserInput(firstNamestring, lastNamestring, emailstring, userTicketsuint, remainingTicketsuint) (bool, bool, bool) {
+   isValidName := len(firstName) >= 2 && len(lastName) >= 2
+   isValidEmail := strings.Contains(email, "@")
+   isValidTicketNumber := userTickets > 0 && userTickets <= remainingTickets
+   returnisValidName, isValidEmail, isValidTicketNumber
+}
+```
+
+we can define variables that are shared among multiple functions so variables that are accessible both for main and other functions as well ouput without having to pass them arround. it makes sense to create those variables in a place that lets multiple functions including the main have access to them and these are called **package level variables** and these are variables defined outside from all the functions.
+
+```go
+const conferenceTickets = 50
+var conferenceName = "Go Conference"
+var remainingTickets uint = 50
+var bookings = []string{}
+func main(){...}
+```
