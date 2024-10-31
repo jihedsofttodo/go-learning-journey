@@ -30,7 +30,6 @@ func main() {
 		//isValidCity := city == "Singapore" || city == "London"
 		if isValidName && isValidEmail && isValidTicketNumber {
 			bookTicket(userTickets, firstName, lastName, email)
-			wg.Add(1)
 			go sendTicket(userTickets, firstName, lastName, email)
 
 			fmt.Printf("The first names of bookings: %v\n", printFirstNamesWithReturn())
